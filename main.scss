@@ -1,0 +1,412 @@
+@use 'base';
+@use 'grid';
+@use 'btn';
+@use 'color';
+@use 'img';
+@use 'alert';
+@use 'hidden';
+
+
+// @mixin container {
+//     max-width: $xxl;
+//     margin-left: auto;
+//     margin-right: auto;
+
+//     @media (max-width: $xxl) {
+//         max-width: $xl;
+//     }
+
+//     @media (max-width: $xl) {
+//         max-width: $lg;
+//     }
+
+//     @media (max-width: $lg) {
+//         max-width: $md;
+//     }
+
+//     @media (max-width: $md) {
+//         max-width: $sm;
+//     }
+
+//     @media (max-width: $sm) {
+//         max-width: 100%;
+//         padding-right: 1rem;
+//         padding-left: 1rem;
+//     }
+// }
+
+// .container {
+//     @include container;
+// }
+
+.row {
+    @extend %row;
+    @include grid.flex(100%, 0);
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.container {
+    width: 100%;
+    padding-top: 0;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-top: 0;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.col {
+    flex: 1 0 0%;
+}
+
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.col-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+}
+
+.col-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+}
+
+.col-3 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.col-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+
+.col-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+}
+
+.col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.col-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+}
+
+.col-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+}
+
+.col-9 {
+    flex: 0 0 auto;
+    width: 75%;
+}
+
+.col-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+}
+
+.col-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+//   color buttons
+
+.btn {
+    @include btn.btn($font-weight: 600);
+}
+
+.btn.active,
+.btn:active {
+    @include btn.btn($bg: color.$dark-active, $color: color.$transparent-active, $border-color: color.$transparent);
+    transition: 0.3s;
+}
+
+.btn:disabled,
+.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.btn-primary {
+    background-color: color.$primary;
+    color: color.$white;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+    @include btn.btn($font-weight: 600, $bg: color.$primary-active, $color: color.$primary, $border-color: color.$primary);
+    transition: 0.3s;
+}
+
+.btn-danger {
+    background-color: color.$danger;
+    color: color.$white;
+}
+
+.btn-danger:active,
+.btn-danger.active {
+    @include btn.btn($font-weight: 600, $bg: color.$danger-active, $color: color.$danger, $border-color: color.$danger);
+    transition: 0.3s;
+}
+
+.btn-info {
+    background-color: color.$info;
+    color: color.$white;
+    box-shadow: rgb(130, 138, 145);
+}
+
+.btn-info:active,
+.btn-info.active {
+    @include btn.btn($font-weight: 600, $bg: color.$info-active, $color: color.$info, $border-color: color.$info);
+    transition: 0.3s;
+}
+
+.btn-blue-twitter {
+    background-color: color.$blue-twitter;
+    color: color.$white;
+    box-shadow: rgb(130, 138, 145);
+}
+
+.btn-blue-twitter:active,
+.btn-blue-twitter.active {
+    @include btn.btn($font-weight: 600, $bg: color.$blue-twitter-active, $color: color.$blue-twitter, $border-color: color.$blue-twitter);
+    transition: 0.3s;
+}
+
+.btn-orange-leboncoin {
+    background-color: color.$orange-leboncoin;
+    color: color.$white;
+}
+
+.btn-orange-leboncoin:active,
+.btn-orange-leboncoin.active {
+    @include btn.btn($font-weight: 600, $bg: color.$orange-leboncoin-active, $color: color.$orange-leboncoin, $border-color: color.$orange-leboncoin);
+    transition: 0.3s;
+}
+
+.btn-success {
+    background-color: color.$success;
+    color: color.$white;
+}
+
+.btn-success:active,
+.btn-success.active {
+    @include btn.btn($font-weight: 600, $bg: color.$success-active, $color: color.$success, $border-color: color.$success);
+    transition: 0.3s;
+}
+
+.btn-white {
+    background-color: color.$white;
+    color: color.$dark;
+}
+
+.btn-white:active,
+.btn-white.active {
+    @include btn.btn($font-weight: 600, $bg: color.$white-active, $color: color.$white, $border-color: color.$white);
+    transition: 0.3s;
+}
+
+.btn-dark {
+    background-color: color.$dark;
+    color: color.$white;
+}
+
+.btn-dark:active,
+.btn-dark.active {
+    @include btn.btn($font-weight: 600, $bg: color.$dark-active, $color: color.$dark, $border-color: color.$dark);
+    transition: 0.3s;
+}
+
+.btn-info:hover,
+.btn-primary:hover,
+.btn-danger:hover,
+.btn-blue-twitter:hover,
+.btn-dark:hover,
+.btn-orange-leboncoin:hover,
+.btn-success:hover,
+.btn-white:hover {
+    -webkit-filter: brightness(90%);
+    transition: 0.3s;
+}
+
+// background color
+
+.bg-danger {
+    background-color: color.$danger;
+}
+
+.bg-primary {
+    background-color: color.$primary;
+}
+
+.bg-info {
+    background-color: color.$info;
+}
+
+.bg-success {
+    background-color: color.$success;
+}
+
+.bg-blue-twitter {
+    background-color: color.$blue-twitter;
+}
+
+.bg-orange-leboncoin {
+    background-color: color.$orange-leboncoin;
+}
+
+.bg-white {
+    background-color: color.$white;
+}
+
+.bg-blue-facebook {
+    background-color: color.$blue-facebook;
+    color: color.$white;
+    box-shadow: rgb(130, 138, 145);
+}
+
+// text color
+
+.text-white {
+    color: color.$white;
+}
+
+.text-error {
+    color: color.$danger;
+}
+
+.text-dark {
+    color: color.$dark;
+}
+
+.text-blue-twitter {
+    color: color.$blue-twitter;
+}
+
+.text-blue-facebook {
+    color: color.$blue-facebook;
+}
+
+.text-orange-leboncoin {
+    color: color.$orange-leboncoin;
+}
+
+.text-success {
+    color: color.$success;
+}
+
+.text-muted {
+    color: color.$dark;
+    opacity: 0.65;
+    font-weight: 600;
+}
+
+//images reponsive
+
+.img-responsive {
+    @include img.img($responsive: 100%);
+}
+
+.img-rounded {
+    @include img.img($rounded: 50%);
+}
+
+.img-thumbnail {
+    @include img.img-thumbnail($color: color.$dark-active);
+}
+
+.img-blur {
+    @include img.img($blur: blur(1.5rem), $responsive: 100%);
+}
+
+// alert -> .alert-success, alert-info, .alertwarning et .alter-danger
+
+.alert-success {
+    @include alert.alert(color.$success, color.$success-active, color.$white);
+}
+
+.alert-info {
+    @include alert.alert(color.$info, color.$info-active, color.$white);
+}
+
+.alert-warning {
+    @include alert.alert(color.$warning, color.$warning-active, color.$white);
+}
+
+.alert-danger {
+    @include alert.alert(color.$danger-active, color.$danger, color.$white);
+}
+
+.alert {
+    @include alert.alert();
+}
+
+// hidden && visible for elements on differents device screen width
+
+.hidden-xxl{
+    @include hidden.hide_show("xxl",hidden);
+}
+
+.hidden-xl{
+    @include hidden.hide_show("xl",hidden);
+}
+
+.hidden-lg{
+    @include hidden.hide_show("lg",hidden);
+}
+
+.hidden-md{
+    @include hidden.hide_show("md",hidden);
+}
+
+.hidden-sm{
+    @include hidden.hide_show("sm",hidden);
+}
+
+.visible-xxl{
+    @include hidden.hide_show("xxl");
+}
+
+.visible-xl{
+    @include hidden.hide_show("xl");
+}
+
+.visible-lg{
+    @include hidden.hide_show("lg");
+}
+
+.visible-md{
+    @include hidden.hide_show("md");
+}
+
+.visible-sm{
+    @include hidden.hide_show("sm");
+}
+
+.visible-print{
+    @include hidden.hide_show();
+}
+
+.hidden-print{
+    @include hidden.hide_show("",hidden);
+}
