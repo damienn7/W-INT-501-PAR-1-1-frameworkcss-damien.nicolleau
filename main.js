@@ -35,3 +35,60 @@ nav.optionsFunction();
 
 recursive();
 
+
+
+// modal_comtent.addEventListener("mouseout",(event)=>{
+//     onclick=function(){
+//         modal.style.display = "none";
+//     }
+// })
+
+
+    // modal 
+
+    let modal= document.getElementsByClassName("modal")[0];
+
+    let modal_comtent = document.getElementsByClassName("modal-content")[0];
+    
+    let modal_button = document.getElementById("modal");
+    
+    let modal_dialog = document.getElementsByClassName("modal-dialog")[0];
+    
+    modal_button.addEventListener("click",()=>{
+        modal.style.display="block";
+        onkeyup=function (event) {
+            if(event.key === "Escape") {
+                modal.style.display = "none";
+            }
+        }
+        
+        modal_comtent.addEventListener("mouseover",(event)=>{
+            document.getElementsByClassName("btn-close")[0].addEventListener("click",()=>{
+                modal.style.display = "none";
+            })
+         
+            modal.style.display="block";
+            console.log("test_over")
+            
+        })
+
+                    modal_comtent.addEventListener("mouseleave",(e)=>{
+                console.log("test_leave")
+              
+              modal.addEventListener("click",hide);
+            
+            //   modal.removeEventListener("click",hide);
+    
+            
+               
+            })
+    })
+    
+    function hide(){
+        modal.style.display="none";
+    }
+
+
+
+
+
