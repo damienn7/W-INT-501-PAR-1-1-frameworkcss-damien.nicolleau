@@ -1,4 +1,4 @@
-@mixin alert($color:transparent,$border-color:transparent,$text-color:black){
+@mixin alert($border-color:transparent,$color:transparent,$text-color:black){
     border: 2px solid $border-color;
     background-color: $color;
     transition: 0.3s;
@@ -8,5 +8,5 @@
     font-weight: 600;
     word-spacing: 2px;
     letter-spacing: 1px;
-    opacity: 0.9;
+    opacity: 0.65;
 }
